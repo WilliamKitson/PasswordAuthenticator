@@ -2,11 +2,14 @@
 {
     internal class LengthInvalidTest
     {
+        public LengthInvalidTest()
+        {
+            unit = new PasswordAuthenticator.Implementation();
+        }
+
         public string Test()
         {
             string password = "thispasswordistoosh";
-            PasswordAuthenticator.Facade unit = new PasswordAuthenticator.Implementation();
-
             for (int i = 0; i < password.Length; i++)
             {
                 unit.Push(password[i]);
@@ -19,5 +22,7 @@
 
             return "length invalid test failed\n";
         }
+
+        private PasswordAuthenticator.Facade unit;
     }
 }
