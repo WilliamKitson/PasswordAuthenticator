@@ -4,11 +4,11 @@
     {
         private PasswordAuthenticator.Facade unit;
         private readonly string prefix = "QWERTYUIOPASDFGHJKLZXCVBN";
-        private readonly string numerals = "qwertyuiopasdfghjklzxcvbnm";
+        private readonly string lowercase = "qwertyuiopasdfghjklzxcvbnm";
 
         public string Test()
         {
-            if (CountSuccesses() == numerals.Length)
+            if (CountSuccesses() == lowercase.Length)
             {
                 return "";
             }
@@ -20,10 +20,10 @@
         {
             int output = 0;
 
-            for (int i = 0; i < numerals.Length; i++)
+            for (int i = 0; i < lowercase.Length; i++)
             {
                 InitialisePrefix(i);
-                unit.Push(numerals[i]);
+                unit.Push(lowercase[i]);
                 output += System.Convert.ToInt32(unit.Lowercase());
             }
 

@@ -4,11 +4,11 @@
     {
         private PasswordAuthenticator.Facade unit;
         private readonly string prefix = "thisisapasswordprefixthisis";
-        private readonly string numerals = "!£$%^&*()-_=+[{]};:@#~,<.>/?";
+        private readonly string symbols = "!£$%^&*()-_=+[{]};:@#~,<.>/?";
 
         public string Test()
         {
-            if (CountSuccesses() == numerals.Length)
+            if (CountSuccesses() == symbols.Length)
             {
                 return "";
             }
@@ -20,10 +20,10 @@
         {
             int output = 0;
 
-            for (int i = 0; i < numerals.Length; i++)
+            for (int i = 0; i < symbols.Length; i++)
             {
                 InitialisePrefix(i);
-                unit.Push(numerals[i]);
+                unit.Push(symbols[i]);
                 output += System.Convert.ToInt32(unit.Symbols());
             }
 

@@ -4,11 +4,11 @@
     {
         private PasswordAuthenticator.Facade unit;
         private readonly string prefix = "thisisapa";
-        private readonly string lowercase = "1234567890";
+        private readonly string numerals = "1234567890";
 
         public string Test()
         {
-            if (CountSuccesses() == lowercase.Length)
+            if (CountSuccesses() == numerals.Length)
             {
                 return "";
             }
@@ -20,10 +20,10 @@
         {
             int output = 0;
 
-            for (int i = 0; i < lowercase.Length; i++)
+            for (int i = 0; i < numerals.Length; i++)
             {
                 InitialisePrefix(i);
-                unit.Push(lowercase[i]);
+                unit.Push(numerals[i]);
                 output += System.Convert.ToInt32(unit.Numerals());
             }
 
