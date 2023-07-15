@@ -2,9 +2,13 @@
 {
     internal class SymbolsInvalidTest
     {
+        public SymbolsInvalidTest()
+        {
+            unit = new PasswordAuthenticator.Implementation();
+        }
+
         public string Test()
         {
-            PasswordAuthenticator.Facade unit = new PasswordAuthenticator.Implementation();
             string password = "nosymbolshere";
 
             for (int i = 0; i < password.Length; i++)
@@ -19,5 +23,7 @@
 
             return "symbols invalid test failed\n";
         }
+
+        private readonly PasswordAuthenticator.Facade unit;
     }
 }
