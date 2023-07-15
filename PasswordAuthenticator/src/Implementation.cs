@@ -58,6 +58,11 @@
             return false;
         }
 
+        public override bool Lowercase()
+        {
+            return false;
+        }
+
         private void InitialiseNumerals()
         {
             numerals.Push('1');

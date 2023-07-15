@@ -6,5 +6,6 @@
         public abstract bool Length();
         public abstract bool Numerals();
         public abstract bool Symbols();
+        public abstract bool Lowercase();
     }
 }

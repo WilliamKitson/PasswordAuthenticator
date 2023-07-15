@@ -30,6 +30,7 @@
             output += new NumeralsValidTest().Test();
             output += new SymbolsInvalidTest().Test();
             output += new SymbolsValidTest().Test();
+            output += new LowercaseInvalidTest().Test();
 
             return output;
         }

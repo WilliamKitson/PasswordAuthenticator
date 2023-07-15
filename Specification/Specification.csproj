@@ -39,6 +39,7 @@
     <Compile Include="src\Entrypoint.cs" />
     <Compile Include="src\LengthInvalidTest.cs" />
     <Compile Include="src\LengthValidTest.cs" />
+    <Compile Include="src\LowercaseInvalidTest.cs" />
     <Compile Include="src\NumeralsInvalidTest.cs" />
     <Compile Include="src\NumeralsValidTest.cs" />
     <Compile Include="src\SymbolsInvalidTest.cs" />
