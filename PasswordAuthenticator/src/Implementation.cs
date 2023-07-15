@@ -5,6 +5,17 @@
         public Implementation()
         {
             password = new CharacterStack();
+            numerals = new CharacterStack();
+            numerals.Push('1');
+            numerals.Push('2');
+            numerals.Push('3');
+            numerals.Push('4');
+            numerals.Push('5');
+            numerals.Push('6');
+            numerals.Push('7');
+            numerals.Push('8');
+            numerals.Push('9');
+            numerals.Push('0');
         }
 
         public override void Push(char input)
@@ -24,13 +35,11 @@
 
         public override bool Numerals()
         {
-            char[] numerals = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
-
             for (int i = 0; i < password.GetLength(); i++)
             {
-                for (int i2 = 0; i2 < 10; i2++)
+                for (int i2 = 0; i2 < numerals.GetLength(); i2++)
                 {
-                    if (password.GetChar(i) == numerals[i2])
+                    if (password.GetChar(i) == numerals.GetChar(i2))
                     {
                         return true;
                     }
@@ -41,5 +50,6 @@
         }
 
         private readonly CharacterStack password;
+        private readonly CharacterStack numerals;
     }
 }
