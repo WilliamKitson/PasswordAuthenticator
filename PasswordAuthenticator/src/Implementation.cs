@@ -10,32 +10,7 @@
             lowercase = new CharacterStack();
             InitialiseNumerals();
             InitialiseSymbols();
-            lowercase.Push('q');
-            lowercase.Push('w');
-            lowercase.Push('e');
-            lowercase.Push('r');
-            lowercase.Push('t');
-            lowercase.Push('y');
-            lowercase.Push('u');
-            lowercase.Push('i');
-            lowercase.Push('o');
-            lowercase.Push('p');
-            lowercase.Push('a');
-            lowercase.Push('s');
-            lowercase.Push('d');
-            lowercase.Push('f');
-            lowercase.Push('g');
-            lowercase.Push('h');
-            lowercase.Push('j');
-            lowercase.Push('k');
-            lowercase.Push('l');
-            lowercase.Push('z');
-            lowercase.Push('x');
-            lowercase.Push('c');
-            lowercase.Push('v');
-            lowercase.Push('b');
-            lowercase.Push('n');
-            lowercase.Push('m');
+            InitialiseLowercase();
         }
 
         public override void Push(char input)
@@ -145,6 +120,36 @@
             symbols.Push('>');
             symbols.Push('/');
             symbols.Push('?');
+        }
+
+        private void InitialiseLowercase()
+        {
+            lowercase.Push('q');
+            lowercase.Push('w');
+            lowercase.Push('e');
+            lowercase.Push('r');
+            lowercase.Push('t');
+            lowercase.Push('y');
+            lowercase.Push('u');
+            lowercase.Push('i');
+            lowercase.Push('o');
+            lowercase.Push('p');
+            lowercase.Push('a');
+            lowercase.Push('s');
+            lowercase.Push('d');
+            lowercase.Push('f');
+            lowercase.Push('g');
+            lowercase.Push('h');
+            lowercase.Push('j');
+            lowercase.Push('k');
+            lowercase.Push('l');
+            lowercase.Push('z');
+            lowercase.Push('x');
+            lowercase.Push('c');
+            lowercase.Push('v');
+            lowercase.Push('b');
+            lowercase.Push('n');
+            lowercase.Push('m');
         }
 
         private readonly CharacterStack password;
