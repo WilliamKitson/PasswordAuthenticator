@@ -1,20 +1,18 @@
-﻿using System;
-
-namespace Specification
+﻿namespace Specification
 {
     internal class Entrypoint
     {
         private static void Main()
         {
-            Console.WriteLine(Results());
-            Console.ReadLine();
+            System.Console.WriteLine(Results());
+            System.Console.ReadLine();
         }
 
         private static string Results()
         {
             string output = ConcatenateTests();
 
-            if (Convert.ToBoolean(output.Length))
+            if (System.Convert.ToBoolean(output.Length))
             {
                 return output;
             }
