@@ -5,16 +5,8 @@
         public void Push(char input)
         {
             IncrementLength();
-
-            char[] temp = new char[length];
-
-            for (int i = 0; i < length - 1; i++)
-            {
-                temp[i] = password[i];
-            }
-
-            password = temp;
-            password[length - 1] = input;
+            data = PushedData();
+            data[length - 1] = input;
         }
 
         public int GetLength()
@@ -24,7 +16,7 @@
 
         public char GetChar(int input)
         {
-            return password[input];
+            return data[input];
         }
 
         private void IncrementLength()
@@ -32,7 +24,19 @@
             length++;
         }
 
+        private char[] PushedData()
+        {
+            char[] output = new char[length];
+
+            for (int i = 0; i < length - 1; i++)
+            {
+                output[i] = data[i];
+            }
+
+            return output;
+        }
+
         private int length;
-        private char[] password;
+        private char[] data;
     }
 }
