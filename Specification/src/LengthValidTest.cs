@@ -5,12 +5,7 @@
         public LengthValidTest()
         {
             unit = new PasswordAuthenticator.Implementation();
-            string password = "thispasswordistoosho";
-
-            for (int i = 0; i < password.Length; i++)
-            {
-                unit.Push(password[i]);
-            }
+            InitialiseValidPassword();
         }
 
         public string Test()
@@ -21,6 +16,16 @@
             }
 
             return "length valid test failed\n";
+        }
+
+        private void InitialiseValidPassword()
+        {
+            string password = "thispasswordistoosho";
+
+            for (int i = 0; i < password.Length; i++)
+            {
+                unit.Push(password[i]);
+            }
         }
 
         private PasswordAuthenticator.Facade unit;
