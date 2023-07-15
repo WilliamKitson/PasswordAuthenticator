@@ -45,6 +45,7 @@
     <Compile Include="src\NumeralsValidTest.cs" />
     <Compile Include="src\SymbolsInvalidTest.cs" />
     <Compile Include="src\SymbolsValidTest.cs" />
+    <Compile Include="src\UppercaseInvalidTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PasswordAuthenticator\PasswordAuthenticator.csproj">

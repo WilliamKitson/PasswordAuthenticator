@@ -32,6 +32,7 @@
             output += new SymbolsValidTest().Test();
             output += new LowercaseInvalidTest().Test();
             output += new LowercaseValidTest().Test();
+            output += new UppercaseInvalidTest().Test();
 
             return output;
         }

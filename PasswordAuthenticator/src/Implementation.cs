@@ -76,6 +76,11 @@
             return false;
         }
 
+        public override bool Uppercase()
+        {
+            return false;
+        }
+
         private void InitialiseNumerals()
         {
             numerals.Push('1');
