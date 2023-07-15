@@ -7,8 +7,35 @@
             password = new CharacterStack();
             numerals = new CharacterStack();
             symbols = new CharacterStack();
+            lowercase = new CharacterStack();
             InitialiseNumerals();
             InitialiseSymbols();
+            lowercase.Push('q');
+            lowercase.Push('w');
+            lowercase.Push('e');
+            lowercase.Push('r');
+            lowercase.Push('t');
+            lowercase.Push('y');
+            lowercase.Push('u');
+            lowercase.Push('i');
+            lowercase.Push('o');
+            lowercase.Push('p');
+            lowercase.Push('a');
+            lowercase.Push('s');
+            lowercase.Push('d');
+            lowercase.Push('f');
+            lowercase.Push('g');
+            lowercase.Push('h');
+            lowercase.Push('j');
+            lowercase.Push('k');
+            lowercase.Push('l');
+            lowercase.Push('z');
+            lowercase.Push('x');
+            lowercase.Push('c');
+            lowercase.Push('v');
+            lowercase.Push('b');
+            lowercase.Push('n');
+            lowercase.Push('m');
         }
 
         public override void Push(char input)
@@ -60,6 +87,17 @@
 
         public override bool Lowercase()
         {
+            for (int i = 0; i < password.GetLength(); i++)
+            {
+                for (int i2 = 0; i2 < lowercase.GetLength(); i2++)
+                {
+                    if (password.GetChar(i) == lowercase.GetChar(i2))
+                    {
+                        return true;
+                    }
+                }
+            }
+
             return false;
         }
 
@@ -112,5 +150,6 @@
         private readonly CharacterStack password;
         private readonly CharacterStack numerals;
         private readonly CharacterStack symbols;
+        private readonly CharacterStack lowercase;
     }
 }

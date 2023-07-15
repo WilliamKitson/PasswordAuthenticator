@@ -31,6 +31,7 @@
             output += new SymbolsInvalidTest().Test();
             output += new SymbolsValidTest().Test();
             output += new LowercaseInvalidTest().Test();
+            output += new LowercaseValidTest().Test();
 
             return output;
         }
