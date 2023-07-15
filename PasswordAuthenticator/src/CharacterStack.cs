@@ -4,9 +4,8 @@
     {
         public void Push(char input)
         {
-            IncrementLength();
-            data = PushedData();
-            data[length - 1] = input;
+            data = IncrementedData();
+            InitialiseLastCharacter(input);
         }
 
         public int GetLength()
@@ -19,13 +18,9 @@
             return data[input];
         }
 
-        private void IncrementLength()
+        private char[] IncrementedData()
         {
             length++;
-        }
-
-        private char[] PushedData()
-        {
             char[] output = new char[length];
 
             for (int i = 0; i < length - 1; i++)
@@ -34,6 +29,11 @@
             }
 
             return output;
+        }
+
+        private void InitialiseLastCharacter(char input)
+        {
+            data[length - 1] = input;
         }
 
         private int length;
