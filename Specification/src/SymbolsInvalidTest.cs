@@ -5,9 +5,20 @@
         public SymbolsInvalidTest()
         {
             unit = new PasswordAuthenticator.Implementation();
+            InitialiseInvalidPassword();
         }
 
         public string Test()
+        {
+            if (!unit.Symbols())
+            {
+                return "";
+            }
+
+            return "symbols invalid test failed\n";
+        }
+
+        private void InitialiseInvalidPassword()
         {
             string password = "nosymbolshere";
 
@@ -15,13 +26,6 @@
             {
                 unit.Push(password[i]);
             }
-
-            if (!unit.Symbols())
-            {
-                return "";
-            }
-
-            return "symbols invalid test failed\n";
         }
 
         private readonly PasswordAuthenticator.Facade unit;
