@@ -62,15 +62,9 @@
 
         public override bool Uppercase()
         {
-            for (int i = 0; i < password.GetLength(); i++)
+            for (int i = 0; i < uppercase.GetLength(); i++)
             {
-                for (int i2 = 0; i2 < uppercase.GetLength(); i2++)
-                {
-                    if (password.GetChar(i) == uppercase.GetChar(i2))
-                    {
-                        return true;
-                    }
-                }
+                if (password.Contains(uppercase.GetChar(i))) return true;
             }
 
             return false;
