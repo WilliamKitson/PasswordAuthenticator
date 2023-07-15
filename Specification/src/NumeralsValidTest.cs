@@ -18,13 +18,7 @@
 
             for (int i = 0; i < numerals.Length; i++)
             {
-                PasswordAuthenticator.Facade unit = new PasswordAuthenticator.Implementation();
-
-                for (int i2 = 0; i2 < i; i2++)
-                {
-                    unit.Push(prefix[i2]);
-                }
-
+                InitialisePrefix(i);
                 unit.Push(numerals[i]);
                 output += System.Convert.ToInt32(unit.Numerals());
             }
@@ -32,6 +26,17 @@
             return output;
         }
 
+        private void InitialisePrefix(int input)
+        {
+            unit = new PasswordAuthenticator.Implementation();
+
+            for (int i = 0; i < input; i++)
+            {
+                unit.Push(prefix[i]);
+            }
+        }
+
+        private PasswordAuthenticator.Facade unit;
         private readonly string prefix = "thisisapa";
         private readonly string numerals = "1234567890";
     }
