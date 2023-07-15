@@ -8,34 +8,7 @@
             numerals = new CharacterStack();
             symbols = new CharacterStack();
             InitialiseNumerals();
-            symbols.Push('!');
-            symbols.Push('£');
-            symbols.Push('$');
-            symbols.Push('%');
-            symbols.Push('^');
-            symbols.Push('&');
-            symbols.Push('*');
-            symbols.Push('(');
-            symbols.Push(')');
-            symbols.Push('-');
-            symbols.Push('_');
-            symbols.Push('=');
-            symbols.Push('+');
-            symbols.Push('[');
-            symbols.Push('{');
-            symbols.Push(']');
-            symbols.Push('}');
-            symbols.Push(';');
-            symbols.Push(':');
-            symbols.Push('@');
-            symbols.Push('#');
-            symbols.Push('~');
-            symbols.Push(',');
-            symbols.Push('<');
-            symbols.Push('.');
-            symbols.Push('>');
-            symbols.Push('/');
-            symbols.Push('?');
+            InitialiseSymbols();
         }
 
         public override void Push(char input)
@@ -97,6 +70,38 @@
             numerals.Push('8');
             numerals.Push('9');
             numerals.Push('0');
+        }
+
+        private void InitialiseSymbols()
+        {
+            symbols.Push('!');
+            symbols.Push('£');
+            symbols.Push('$');
+            symbols.Push('%');
+            symbols.Push('^');
+            symbols.Push('&');
+            symbols.Push('*');
+            symbols.Push('(');
+            symbols.Push(')');
+            symbols.Push('-');
+            symbols.Push('_');
+            symbols.Push('=');
+            symbols.Push('+');
+            symbols.Push('[');
+            symbols.Push('{');
+            symbols.Push(']');
+            symbols.Push('}');
+            symbols.Push(';');
+            symbols.Push(':');
+            symbols.Push('@');
+            symbols.Push('#');
+            symbols.Push('~');
+            symbols.Push(',');
+            symbols.Push('<');
+            symbols.Push('.');
+            symbols.Push('>');
+            symbols.Push('/');
+            symbols.Push('?');
         }
 
         private readonly CharacterStack password;
