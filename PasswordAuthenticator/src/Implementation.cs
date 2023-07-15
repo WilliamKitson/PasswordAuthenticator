@@ -22,6 +22,11 @@
             return true;
         }
 
+        public override bool Numerals()
+        {
+            return false;
+        }
+
         private int length;
     }
 }

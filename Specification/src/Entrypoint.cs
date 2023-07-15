@@ -26,6 +26,7 @@
 
             output += new LengthInvalidTest().Test();
             output += new LengthValidTest().Test();
+            output += new NumeralsInvalidTest().Test();
 
             return output;
         }
