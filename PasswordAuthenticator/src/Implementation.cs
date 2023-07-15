@@ -42,15 +42,9 @@
 
         public override bool Symbols()
         {
-            for (int i = 0; i < password.GetLength(); i++)
+            for (int i = 0; i < symbols.GetLength(); i++)
             {
-                for (int i2 = 0; i2 < symbols.GetLength(); i2++)
-                {
-                    if (password.GetChar(i) == symbols.GetChar(i2))
-                    {
-                        return true;
-                    }
-                }
+                if (password.Contains(symbols.GetChar(i))) return true;
             }
 
             return false;
