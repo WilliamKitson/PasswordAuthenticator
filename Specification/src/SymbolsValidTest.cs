@@ -2,6 +2,10 @@
 {
     internal class SymbolsValidTest
     {
+        private PasswordAuthenticator.Facade unit;
+        private readonly string prefix = "thisisapasswordprefixthisis";
+        private readonly string numerals = "!£$%^&*()-_=+[{]};:@#~,<.>/?";
+
         public string Test()
         {
             if (CountSuccesses() == numerals.Length)
@@ -35,9 +39,5 @@
                 unit.Push(prefix[i]);
             }
         }
-
-        private PasswordAuthenticator.Facade unit;
-        private readonly string prefix = "thisisapasswordprefixthisis";
-        private readonly string numerals = "!£$%^&*()-_=+[{]};:@#~,<.>/?";
     }
 }

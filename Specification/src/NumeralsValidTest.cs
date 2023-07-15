@@ -2,6 +2,10 @@
 {
     internal class NumeralsValidTest
     {
+        private PasswordAuthenticator.Facade unit;
+        private readonly string prefix = "thisisapa";
+        private readonly string lowercase = "1234567890";
+
         public string Test()
         {
             if (CountSuccesses() == lowercase.Length)
@@ -35,9 +39,5 @@
                 unit.Push(prefix[i]);
             }
         }
-
-        private PasswordAuthenticator.Facade unit;
-        private readonly string prefix = "thisisapa";
-        private readonly string lowercase = "1234567890";
     }
 }

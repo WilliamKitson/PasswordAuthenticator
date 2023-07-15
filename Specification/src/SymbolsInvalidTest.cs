@@ -2,6 +2,8 @@
 {
     internal class SymbolsInvalidTest
     {
+        private readonly PasswordAuthenticator.Facade unit;
+
         public SymbolsInvalidTest()
         {
             unit = new PasswordAuthenticator.Implementation();
@@ -27,7 +29,5 @@
                 unit.Push(password[i]);
             }
         }
-
-        private readonly PasswordAuthenticator.Facade unit;
     }
 }

@@ -2,6 +2,12 @@
 {
     public class Implementation : Facade
     {
+        private readonly CharacterStack password;
+        private readonly CharacterStack numerals;
+        private readonly CharacterStack symbols;
+        private readonly CharacterStack lowercase;
+        private readonly CharacterStack uppercase;
+
         public Implementation()
         {
             password = new CharacterStack();
@@ -175,11 +181,5 @@
             uppercase.Push('N');
             uppercase.Push('M');
         }
-
-        private readonly CharacterStack password;
-        private readonly CharacterStack numerals;
-        private readonly CharacterStack symbols;
-        private readonly CharacterStack lowercase;
-        private readonly CharacterStack uppercase;
     }
 }

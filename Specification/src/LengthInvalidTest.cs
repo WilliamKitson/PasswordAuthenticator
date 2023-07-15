@@ -2,6 +2,8 @@
 {
     internal class LengthInvalidTest
     {
+        private readonly PasswordAuthenticator.Facade unit;
+
         public LengthInvalidTest()
         {
             unit = new PasswordAuthenticator.Implementation();
@@ -27,7 +29,5 @@
                 unit.Push(password[i]);
             }
         }
-
-        private readonly PasswordAuthenticator.Facade unit;
     }
 }

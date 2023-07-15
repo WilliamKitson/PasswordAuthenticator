@@ -2,6 +2,9 @@
 {
     internal class CharacterStack
     {
+        private int length;
+        private char[] data;
+
         public void Push(char input)
         {
             data = IncrementedData();
@@ -45,8 +48,5 @@
         {
             data[length - 1] = input;
         }
-
-        private int length;
-        private char[] data;
     }
 }

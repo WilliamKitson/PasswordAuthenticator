@@ -2,6 +2,10 @@
 {
     internal class UppercaseValidTest
     {
+        private PasswordAuthenticator.Facade unit;
+        private readonly string prefix = "qwertyuiopasdfghjklzxcvbnm";
+        private readonly string uppercase = "QWERTYUIOPASDFGHJKLZXCVBN";
+
         public string Test()
         {
             if (CountSuccesses() == uppercase.Length)
@@ -35,9 +39,5 @@
                 unit.Push(prefix[i]);
             }
         }
-
-        private PasswordAuthenticator.Facade unit;
-        private readonly string prefix = "qwertyuiopasdfghjklzxcvbnm";
-        private readonly string uppercase = "QWERTYUIOPASDFGHJKLZXCVBN";
     }
 }

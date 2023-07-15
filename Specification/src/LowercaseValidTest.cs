@@ -2,6 +2,10 @@
 {
     internal class LowercaseValidTest
     {
+        private PasswordAuthenticator.Facade unit;
+        private readonly string prefix = "QWERTYUIOPASDFGHJKLZXCVBN";
+        private readonly string numerals = "qwertyuiopasdfghjklzxcvbnm";
+
         public string Test()
         {
             if (CountSuccesses() == numerals.Length)
@@ -35,9 +39,5 @@
                 unit.Push(prefix[i]);
             }
         }
-
-        private PasswordAuthenticator.Facade unit;
-        private readonly string prefix = "QWERTYUIOPASDFGHJKLZXCVBN";
-        private readonly string numerals = "qwertyuiopasdfghjklzxcvbnm";
     }
 }
