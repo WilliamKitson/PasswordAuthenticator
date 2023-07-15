@@ -28,6 +28,6 @@
             }
         }
 
-        private PasswordAuthenticator.Facade unit;
+        private readonly PasswordAuthenticator.Facade unit;
     }
 }
