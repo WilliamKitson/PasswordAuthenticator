@@ -40,6 +40,7 @@
     <Compile Include="src\LengthInvalidTest.cs" />
     <Compile Include="src\LengthValidTest.cs" />
     <Compile Include="src\NumeralsInvalidTest.cs" />
+    <Compile Include="src\NumeralsValidTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PasswordAuthenticator\PasswordAuthenticator.csproj">
