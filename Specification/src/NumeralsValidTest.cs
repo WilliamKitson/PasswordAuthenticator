@@ -4,6 +4,16 @@
     {
         public string Test()
         {
+            if (Success())
+            {
+                return "";
+            }
+
+            return "numerals valid test failed\n";
+        }
+
+        private bool Success()
+        {
             PasswordAuthenticator.Facade unit;
             string numerals = "1234567890";
             int successes = 0;
@@ -15,12 +25,7 @@
                 successes += System.Convert.ToInt32(unit.Numerals());
             }
 
-            if (successes == numerals.Length)
-            {
-                return "";
-            }
-
-            return "numerals valid test failed\n";
+            return successes == numerals.Length;
         }
     }
 }
