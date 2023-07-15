@@ -12,7 +12,7 @@ namespace Specification
 
         private static string Results()
         {
-            string output = new LengthInvalidTest().Test();
+            string output = ConcatenateTests();
 
             if (Convert.ToBoolean(output.Length))
             {
@@ -20,6 +20,11 @@ namespace Specification
             }
 
             return "all tests pass";
+        }
+
+        private static string ConcatenateTests()
+        {
+            return new LengthInvalidTest().Test();
         }
     }
 }
