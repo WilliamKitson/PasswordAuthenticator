@@ -2,5 +2,26 @@
 {
     public class Implementation : Facade
     {
+        public Implementation()
+        {
+            length = 0;
+        }
+
+        public override void Push(char input)
+        {
+            length++;
+        }
+
+        public override bool Length()
+        {
+            if (length < 20)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private int length;
     }
 }

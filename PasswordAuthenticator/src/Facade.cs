@@ -1,15 +1,8 @@
 ﻿namespace PasswordAuthenticator
 {
-    public class Facade
+    public abstract class Facade
     {
-        public void Push(char input)
-        {
-
-        }
-
-        public bool Length()
-        {
-            return false;
-        }
+        public abstract void Push(char input);
+        public abstract bool Length();
     }
 }

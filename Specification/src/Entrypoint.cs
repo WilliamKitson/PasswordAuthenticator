@@ -24,7 +24,12 @@ namespace Specification
 
         private static string ConcatenateTests()
         {
-            return new LengthInvalidTest().Test();
+            string output = "";
+
+            output += new LengthInvalidTest().Test();
+            output += new LengthValidTest().Test();
+
+            return output;
         }
     }
 }
