@@ -5,12 +5,7 @@
         public NumeralsInvalidTest()
         {
             unit = new PasswordAuthenticator.Implementation();
-            string password = "nonumeralshere";
-
-            for (int i = 0; i < password.Length; i++)
-            {
-                unit.Push(password[i]);
-            }
+            InitialiseInvalidPassword();
         }
 
         public string Test()
@@ -21,6 +16,16 @@
             }
 
             return "numerals invalid test failed\n";
+        }
+
+        private void InitialiseInvalidPassword()
+        {
+            string password = "nonumeralshere";
+
+            for (int i = 0; i < password.Length; i++)
+            {
+                unit.Push(password[i]);
+            }
         }
 
         private PasswordAuthenticator.Facade unit;
