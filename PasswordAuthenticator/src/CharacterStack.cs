@@ -8,6 +8,16 @@
             InitialiseLastCharacter(input);
         }
 
+        public bool Contains(char input)
+        {
+            for (int i = 0; i < length; i++) 
+            {
+                if (data[i] == input) return true;
+            }
+
+            return false;
+        }
+
         public int GetLength()
         {
             return length;

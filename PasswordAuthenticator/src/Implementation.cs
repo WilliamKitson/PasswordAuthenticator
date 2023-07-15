@@ -32,15 +32,9 @@
 
         public override bool Numerals()
         {
-            for (int i = 0; i < password.GetLength(); i++)
+            for (int i = 0; i < numerals.GetLength(); i++)
             {
-                for (int i2 = 0; i2 < numerals.GetLength(); i2++)
-                {
-                    if (password.GetChar(i) == numerals.GetChar(i2))
-                    {
-                        return true;
-                    }
-                }
+                if (password.Contains(numerals.GetChar(i))) return true;
             }
 
             return false;
