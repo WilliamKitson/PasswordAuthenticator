@@ -4,7 +4,7 @@
     {
         public string Test()
         {
-            if (Success())
+            if (CountSuccesses() == numerals.Length)
             {
                 return "";
             }
@@ -12,20 +12,21 @@
             return "numerals valid test failed\n";
         }
 
-        private bool Success()
+        private int CountSuccesses()
         {
             PasswordAuthenticator.Facade unit;
-            string numerals = "1234567890";
-            int successes = 0;
+            int output = 0;
 
             for (int i = 0; i < numerals.Length; i++)
             {
                 unit = new PasswordAuthenticator.Implementation();
                 unit.Push(numerals[i]);
-                successes += System.Convert.ToInt32(unit.Numerals());
+                output += System.Convert.ToInt32(unit.Numerals());
             }
 
-            return successes == numerals.Length;
+            return output;
         }
+
+        private readonly string numerals = "1234567890";
     }
 }
