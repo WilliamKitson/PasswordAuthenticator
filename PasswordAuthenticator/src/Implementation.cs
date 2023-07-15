@@ -6,7 +6,36 @@
         {
             password = new CharacterStack();
             numerals = new CharacterStack();
+            symbols = new CharacterStack();
             InitialiseNumerals();
+            symbols.Push('!');
+            symbols.Push('£');
+            symbols.Push('$');
+            symbols.Push('%');
+            symbols.Push('^');
+            symbols.Push('&');
+            symbols.Push('*');
+            symbols.Push('(');
+            symbols.Push(')');
+            symbols.Push('-');
+            symbols.Push('_');
+            symbols.Push('=');
+            symbols.Push('+');
+            symbols.Push('[');
+            symbols.Push('{');
+            symbols.Push(']');
+            symbols.Push('}');
+            symbols.Push(';');
+            symbols.Push(':');
+            symbols.Push('@');
+            symbols.Push('#');
+            symbols.Push('~');
+            symbols.Push(',');
+            symbols.Push('<');
+            symbols.Push('.');
+            symbols.Push('>');
+            symbols.Push('/');
+            symbols.Push('?');
         }
 
         public override void Push(char input)
@@ -42,6 +71,17 @@
 
         public override bool Symbols()
         {
+            for (int i = 0; i < password.GetLength(); i++)
+            {
+                for (int i2 = 0; i2 < symbols.GetLength(); i2++)
+                {
+                    if (password.GetChar(i) == symbols.GetChar(i2))
+                    {
+                        return true;
+                    }
+                }
+            }
+
             return false;
         }
 
@@ -61,5 +101,6 @@
 
         private readonly CharacterStack password;
         private readonly CharacterStack numerals;
+        private readonly CharacterStack symbols;
     }
 }

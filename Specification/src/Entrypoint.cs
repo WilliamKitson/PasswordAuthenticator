@@ -29,6 +29,7 @@
             output += new NumeralsInvalidTest().Test();
             output += new NumeralsValidTest().Test();
             output += new SymbolsInvalidTest().Test();
+            output += new SymbolsValidTest().Test();
 
             return output;
         }
