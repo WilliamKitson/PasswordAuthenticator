@@ -8,9 +8,36 @@
             numerals = new CharacterStack();
             symbols = new CharacterStack();
             lowercase = new CharacterStack();
+            uppercase = new CharacterStack();
             InitialiseNumerals();
             InitialiseSymbols();
             InitialiseLowercase();
+            uppercase.Push('Q');
+            uppercase.Push('W');
+            uppercase.Push('E');
+            uppercase.Push('R');
+            uppercase.Push('T');
+            uppercase.Push('Y');
+            uppercase.Push('U');
+            uppercase.Push('I');
+            uppercase.Push('O');
+            uppercase.Push('P');
+            uppercase.Push('A');
+            uppercase.Push('S');
+            uppercase.Push('D');
+            uppercase.Push('F');
+            uppercase.Push('G');
+            uppercase.Push('H');
+            uppercase.Push('J');
+            uppercase.Push('K');
+            uppercase.Push('L');
+            uppercase.Push('Z');
+            uppercase.Push('X');
+            uppercase.Push('C');
+            uppercase.Push('V');
+            uppercase.Push('B');
+            uppercase.Push('N');
+            uppercase.Push('M');
         }
 
         public override void Push(char input)
@@ -78,6 +105,17 @@
 
         public override bool Uppercase()
         {
+            for (int i = 0; i < password.GetLength(); i++)
+            {
+                for (int i2 = 0; i2 < uppercase.GetLength(); i2++)
+                {
+                    if (password.GetChar(i) == uppercase.GetChar(i2))
+                    {
+                        return true;
+                    }
+                }
+            }
+
             return false;
         }
 
@@ -161,5 +199,6 @@
         private readonly CharacterStack numerals;
         private readonly CharacterStack symbols;
         private readonly CharacterStack lowercase;
+        private readonly CharacterStack uppercase;
     }
 }

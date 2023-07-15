@@ -1,26 +1,26 @@
 ﻿namespace Specification
 {
-    internal class NumeralsValidTest
+    internal class UppercaseValidTest
     {
         public string Test()
         {
-            if (CountSuccesses() == lowercase.Length)
+            if (CountSuccesses() == uppercase.Length)
             {
                 return "";
             }
 
-            return "numerals valid test failed\n";
+            return "lowercase valid test failed\n";
         }
 
         private int CountSuccesses()
         {
             int output = 0;
 
-            for (int i = 0; i < lowercase.Length; i++)
+            for (int i = 0; i < uppercase.Length; i++)
             {
                 InitialisePrefix(i);
-                unit.Push(lowercase[i]);
-                output += System.Convert.ToInt32(unit.Numerals());
+                unit.Push(uppercase[i]);
+                output += System.Convert.ToInt32(unit.Uppercase());
             }
 
             return output;
@@ -37,7 +37,7 @@
         }
 
         private PasswordAuthenticator.Facade unit;
-        private readonly string prefix = "thisisapa";
-        private readonly string lowercase = "1234567890";
+        private readonly string prefix = "qwertyuiopasdfghjklzxcvbnm";
+        private readonly string uppercase = "QWERTYUIOPASDFGHJKLZXCVBN";
     }
 }

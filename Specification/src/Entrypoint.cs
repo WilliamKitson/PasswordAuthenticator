@@ -33,6 +33,7 @@
             output += new LowercaseInvalidTest().Test();
             output += new LowercaseValidTest().Test();
             output += new UppercaseInvalidTest().Test();
+            output += new UppercaseValidTest().Test();
 
             return output;
         }
