@@ -28,6 +28,7 @@
             output += new LengthValidTest().Test();
             output += new NumeralsInvalidTest().Test();
             output += new NumeralsValidTest().Test();
+            output += new SymbolsInvalidTest().Test();
 
             return output;
         }

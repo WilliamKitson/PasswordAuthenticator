@@ -40,6 +40,11 @@
             return false;
         }
 
+        public override bool Symbols()
+        {
+            return false;
+        }
+
         private void InitialiseNumerals()
         {
             numerals.Push('1');
