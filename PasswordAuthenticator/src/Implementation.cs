@@ -52,15 +52,9 @@
 
         public override bool Lowercase()
         {
-            for (int i = 0; i < password.GetLength(); i++)
+            for (int i = 0; i < lowercase.GetLength(); i++)
             {
-                for (int i2 = 0; i2 < lowercase.GetLength(); i2++)
-                {
-                    if (password.GetChar(i) == lowercase.GetChar(i2))
-                    {
-                        return true;
-                    }
-                }
+                if (password.Contains(lowercase.GetChar(i))) return true;
             }
 
             return false;
