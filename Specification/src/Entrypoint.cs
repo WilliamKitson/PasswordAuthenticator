@@ -4,19 +4,22 @@ namespace Specification
 {
     internal class Entrypoint
     {
-        static void Main()
+        private static void Main()
         {
-            string results = new LengthInvalidTest().Test();
+            Console.WriteLine(Results());
+            Console.ReadLine();
+        }
 
-            if (Convert.ToBoolean(results.Length))
+        private static string Results()
+        {
+            string output = new LengthInvalidTest().Test();
+
+            if (Convert.ToBoolean(output.Length))
             {
-                Console.WriteLine(results);
-                Console.ReadLine();
-                return;
+                return output;
             }
 
-            Console.WriteLine("all tests passed");
-            Console.ReadLine();
+            return "all tests pass";
         }
     }
 }
