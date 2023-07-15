@@ -4,7 +4,7 @@
     {
         public void Push(char input)
         {
-            length++;
+            IncrementLength();
 
             char[] temp = new char[length];
 
@@ -25,6 +25,11 @@
         public char GetChar(int input)
         {
             return password[input];
+        }
+
+        private void IncrementLength()
+        {
+            length++;
         }
 
         private int length;
