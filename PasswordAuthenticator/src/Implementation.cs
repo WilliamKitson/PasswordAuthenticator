@@ -12,32 +12,7 @@
             InitialiseNumerals();
             InitialiseSymbols();
             InitialiseLowercase();
-            uppercase.Push('Q');
-            uppercase.Push('W');
-            uppercase.Push('E');
-            uppercase.Push('R');
-            uppercase.Push('T');
-            uppercase.Push('Y');
-            uppercase.Push('U');
-            uppercase.Push('I');
-            uppercase.Push('O');
-            uppercase.Push('P');
-            uppercase.Push('A');
-            uppercase.Push('S');
-            uppercase.Push('D');
-            uppercase.Push('F');
-            uppercase.Push('G');
-            uppercase.Push('H');
-            uppercase.Push('J');
-            uppercase.Push('K');
-            uppercase.Push('L');
-            uppercase.Push('Z');
-            uppercase.Push('X');
-            uppercase.Push('C');
-            uppercase.Push('V');
-            uppercase.Push('B');
-            uppercase.Push('N');
-            uppercase.Push('M');
+            InitialiseUppercase();
         }
 
         public override void Push(char input)
@@ -193,6 +168,36 @@
             lowercase.Push('b');
             lowercase.Push('n');
             lowercase.Push('m');
+        }
+
+        private void InitialiseUppercase()
+        {
+            uppercase.Push('Q');
+            uppercase.Push('W');
+            uppercase.Push('E');
+            uppercase.Push('R');
+            uppercase.Push('T');
+            uppercase.Push('Y');
+            uppercase.Push('U');
+            uppercase.Push('I');
+            uppercase.Push('O');
+            uppercase.Push('P');
+            uppercase.Push('A');
+            uppercase.Push('S');
+            uppercase.Push('D');
+            uppercase.Push('F');
+            uppercase.Push('G');
+            uppercase.Push('H');
+            uppercase.Push('J');
+            uppercase.Push('K');
+            uppercase.Push('L');
+            uppercase.Push('Z');
+            uppercase.Push('X');
+            uppercase.Push('C');
+            uppercase.Push('V');
+            uppercase.Push('B');
+            uppercase.Push('N');
+            uppercase.Push('M');
         }
 
         private readonly CharacterStack password;
