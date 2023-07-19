@@ -18,13 +18,9 @@
                 diagnostics += SymbolsDiagnostics();
                 diagnostics += LowercaseDiagnostics();
                 diagnostics += UppercaseDiagnostics();
+                diagnostics += SupportedDiagnostics();
 
                 System.Console.WriteLine(diagnostics);
-
-                if (!authenticator.Supported())
-                {
-                    System.Console.WriteLine("supported: failed");
-                }
             }
         }
 
@@ -86,6 +82,16 @@
             }
 
             return "uppercase: success\n";
+        }
+
+        private string SupportedDiagnostics()
+        {
+            if (!authenticator.Uppercase())
+            {
+                return "supported: failed\n";
+            }
+
+            return "supported: success\n";
         }
     }
 }
