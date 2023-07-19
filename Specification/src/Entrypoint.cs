@@ -5,7 +5,11 @@
         private static void Main()
         {
             System.Console.WriteLine(new TestSuite().Test());
-            new FieldTest().Test();
+
+            while (true)
+            {
+                System.Console.WriteLine(new FieldTest().Test());
+            }
         }
     }
 }

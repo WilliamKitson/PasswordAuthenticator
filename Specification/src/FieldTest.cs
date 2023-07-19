@@ -4,24 +4,21 @@
     {
         PasswordAuthenticator.Facade authenticator;
 
-        public void Test()
+        public string Test()
         {
-            while (true)
-            {
-                System.Console.WriteLine("please type a password:");
-                InitialisePassword(System.Console.ReadLine());
+            System.Console.WriteLine("please type a password:");
+            InitialisePassword(System.Console.ReadLine());
 
-                string diagnostics = "password diagnostics:\n";
+            string output = "password diagnostics:\n";
 
-                diagnostics += LengthDiagnostics();
-                diagnostics += NumeralsDiagnostics();
-                diagnostics += SymbolsDiagnostics();
-                diagnostics += LowercaseDiagnostics();
-                diagnostics += UppercaseDiagnostics();
-                diagnostics += SupportedDiagnostics();
+            output += LengthDiagnostics();
+            output += NumeralsDiagnostics();
+            output += SymbolsDiagnostics();
+            output += LowercaseDiagnostics();
+            output += UppercaseDiagnostics();
+            output += SupportedDiagnostics();
 
-                System.Console.WriteLine(diagnostics);
-            }
+            return output;
         }
 
         private void InitialisePassword(string input)
