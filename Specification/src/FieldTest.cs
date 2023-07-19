@@ -47,52 +47,52 @@
 
         private string NumeralsDiagnostics()
         {
-            if (!authenticator.Numerals())
+            if (authenticator.Numerals())
             {
-                return "numerals: failed\n";
+                return "numerals: success\n";
             }
 
-            return "numerals: success\n";
+            return "numerals: failed\n";
         }
 
         private string SymbolsDiagnostics()
         {
-            if (!authenticator.Symbols())
+            if (authenticator.Symbols())
             {
-                return "symbols: failed\n";
+                return "symbols: success\n";
             }
 
-            return "symbols: success\n";
+            return "symbols: failed\n";
         }
 
         private string LowercaseDiagnostics()
         {
-            if (!authenticator.Lowercase())
+            if (authenticator.Lowercase())
             {
-                return "lowercase: failed\n";
+                return "lowercase: success\n";
             }
 
-            return "lowercase: success\n";
+            return "lowercase: failed\n";
         }
 
         private string UppercaseDiagnostics()
         {
-            if (!authenticator.Uppercase())
+            if (authenticator.Uppercase())
             {
-                return "uppercase: failed\n";
+                return "uppercase: success\n";
             }
 
-            return "uppercase: success\n";
+            return "uppercase: failed\n";
         }
 
         private string SupportedDiagnostics()
         {
-            if (!authenticator.Supported())
+            if (authenticator.Supported())
             {
-                return "supported: failed\n";
+                return "supported: suuccess\n";
             }
 
-            return "supported: success\n";
+            return "supported: failed\n";
         }
     }
 }
