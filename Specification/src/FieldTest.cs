@@ -8,17 +8,7 @@
         {
             System.Console.WriteLine("please type a password:");
             InitialisePassword(System.Console.ReadLine());
-
-            string output = "password diagnostics:\n";
-
-            output += LengthDiagnostics();
-            output += NumeralsDiagnostics();
-            output += SymbolsDiagnostics();
-            output += LowercaseDiagnostics();
-            output += UppercaseDiagnostics();
-            output += SupportedDiagnostics();
-
-            return output;
+            return GetDiagnostics();
         }
 
         private void InitialisePassword(string input)
@@ -29,6 +19,20 @@
             {
                 authenticator.Push(input[i]);
             }
+        }
+
+        private string GetDiagnostics()
+        {
+            string output = "password diagnostics:\n";
+
+            output += LengthDiagnostics();
+            output += NumeralsDiagnostics();
+            output += SymbolsDiagnostics();
+            output += LowercaseDiagnostics();
+            output += UppercaseDiagnostics();
+            output += SupportedDiagnostics();
+
+            return output;
         }
 
         private string LengthDiagnostics()
@@ -83,7 +87,7 @@
 
         private string SupportedDiagnostics()
         {
-            if (!authenticator.Uppercase())
+            if (!authenticator.Supported())
             {
                 return "supported: failed\n";
             }
