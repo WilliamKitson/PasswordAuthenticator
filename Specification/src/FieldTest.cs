@@ -15,13 +15,9 @@
 
                 diagnostics += LengthDiagnostics();
                 diagnostics += NumeralsDiagnostics();
+                diagnostics += SymbolsDiagnostics();
 
                 System.Console.WriteLine(diagnostics);
-
-                if (!authenticator.Symbols())
-                {
-                    System.Console.WriteLine("symbols: failed");
-                }
 
                 if (!authenticator.Lowercase())
                 {
@@ -68,6 +64,16 @@
             }
 
             return "numerals: success\n";
+        }
+
+        private string SymbolsDiagnostics()
+        {
+            if (!authenticator.Symbols())
+            {
+                return "symbols: failed\n";
+            }
+
+            return "symbols: success\n";
         }
     }
 }
