@@ -11,12 +11,12 @@
                 return output;
             }
 
-            return "all tests pass!\n";
+            return SuccessMessage();
         }
 
         public bool GetSuccess()
         {
-            return Test() == "all tests pass!\n";
+            return Test() == SuccessMessage();
         }
 
         private string ConcatenateTests()
@@ -35,6 +35,11 @@
             output += new UppercaseValidTest().Test();
 
             return output;
+        }
+
+        private string SuccessMessage()
+        {
+            return "all tests pass!\n";
         }
     }
 }
