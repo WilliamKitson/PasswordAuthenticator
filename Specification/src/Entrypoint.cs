@@ -4,8 +4,13 @@
     {
         private static void Main()
         {
-            System.Console.WriteLine(new TestSuite().Test());
+            ExecuteTestSuite();
             ExecuteFieldTest();
+        }
+
+        private static void ExecuteTestSuite()
+        {
+            System.Console.WriteLine(new TestSuite().Test());
         }
 
         private static void ExecuteFieldTest()
