@@ -2,48 +2,54 @@
 {
     internal class FieldTest
     {
+        PasswordAuthenticator.Facade authenticator;
+
         public void Test()
         {
             while (true)
             {
                 System.Console.WriteLine("please type a password:");
-                PasswordAuthenticator.Facade fieldtest = new PasswordAuthenticator.Implementation();
-                string password = System.Console.ReadLine();
+                InitialisePassword(System.Console.ReadLine());
 
-                for (int i = 0; i < password.Length; i++)
-                {
-                    fieldtest.Push(password[i]);
-                }
-
-                if (!fieldtest.Length())
+                if (!authenticator.Length())
                 {
                     System.Console.WriteLine("length: failed");
                 }
 
-                if (!fieldtest.Numerals())
+                if (!authenticator.Numerals())
                 {
                     System.Console.WriteLine("numerals: failed");
                 }
 
-                if (!fieldtest.Symbols())
+                if (!authenticator.Symbols())
                 {
                     System.Console.WriteLine("symbols: failed");
                 }
 
-                if (!fieldtest.Lowercase())
+                if (!authenticator.Lowercase())
                 {
                     System.Console.WriteLine("lowercase: failed");
                 }
 
-                if (!fieldtest.Uppercase())
+                if (!authenticator.Uppercase())
                 {
                     System.Console.WriteLine("uppercase: failed");
                 }
 
-                if (!fieldtest.Supported())
+                if (!authenticator.Supported())
                 {
                     System.Console.WriteLine("supported: failed");
                 }
+            }
+        }
+
+        private void InitialisePassword(string input)
+        {
+            authenticator = new PasswordAuthenticator.Implementation();
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                authenticator.Push(input[i]);
             }
         }
     }
