@@ -14,13 +14,9 @@
                 string diagnostics = "password diagnostics:\n";
 
                 diagnostics += LengthDiagnostics();
+                diagnostics += NumeralsDiagnostics();
 
                 System.Console.WriteLine(diagnostics);
-
-                if (!authenticator.Numerals())
-                {
-                    System.Console.WriteLine("numerals: failed");
-                }
 
                 if (!authenticator.Symbols())
                 {
@@ -62,6 +58,16 @@
             }
 
             return "length: success\n";
+        }
+
+        private string NumeralsDiagnostics()
+        {
+            if (!authenticator.Numerals())
+            {
+                return "numerals: failed\n";
+            }
+
+            return "numerals: success\n";
         }
     }
 }
