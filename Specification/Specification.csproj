@@ -47,6 +47,7 @@
     <Compile Include="src\SymbolsInvalidTest.cs" />
     <Compile Include="src\SymbolsValidTest.cs" />
     <Compile Include="src\SupportedInvalidTest.cs" />
+    <Compile Include="src\TestSuite.cs" />
     <Compile Include="src\UppercaseInvalidTest.cs" />
     <Compile Include="src\UppercaseValidTest.cs" />
   </ItemGroup>
