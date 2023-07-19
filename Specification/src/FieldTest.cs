@@ -6,7 +6,6 @@
 
         public string Test()
         {
-            System.Console.WriteLine("please type a password:");
             InitialisePassword(System.Console.ReadLine());
             return GetDiagnostics();
         }
