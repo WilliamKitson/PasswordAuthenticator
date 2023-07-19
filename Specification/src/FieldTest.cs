@@ -4,9 +4,9 @@
     {
         PasswordAuthenticator.Facade authenticator;
 
-        public string Test()
+        public string Test(string input)
         {
-            InitialisePassword(System.Console.ReadLine());
+            InitialisePassword(input);
             return GetDiagnostics();
         }
 

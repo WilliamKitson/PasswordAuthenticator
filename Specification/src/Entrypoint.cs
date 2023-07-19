@@ -10,7 +10,7 @@
             while (suite.GetSuccess())
             {
                 System.Console.WriteLine("please type a password:");
-                System.Console.WriteLine(new FieldTest().Test());
+                System.Console.WriteLine(new FieldTest().Test(System.Console.ReadLine()));
             }
 
             System.Console.ReadLine();
