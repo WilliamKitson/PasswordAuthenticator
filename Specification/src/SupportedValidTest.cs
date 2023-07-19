@@ -1,4 +1,6 @@
-﻿namespace Specification
+﻿using System.Threading;
+
+namespace Specification
 {
     internal class SupportedValidTest
     {
@@ -7,21 +9,26 @@
 
         public string Test()
         {
+            if (Success())
+            {
+                return "";
+            }
+
+            return "supported valid test failed\n";
+        }
+
+        private bool Success()
+        {
             int successes = 0;
 
-            for(int i = 0; i < password.Length; i++)
+            for (int i = 0; i < password.Length; i++)
             {
                 unit = new PasswordAuthenticator.Implementation();
                 unit.Push(password[i]);
                 successes += System.Convert.ToInt32(unit.Supported());
             }
 
-            if (successes == password.Length)
-            {
-                return "";
-            }
-
-            return "supported valid test failed\n";
+            return successes == password.Length;
         }
     }
 }
