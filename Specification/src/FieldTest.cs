@@ -11,10 +11,11 @@
                 System.Console.WriteLine("please type a password:");
                 InitialisePassword(System.Console.ReadLine());
 
-                if (!authenticator.Length())
-                {
-                    System.Console.WriteLine("length: failed");
-                }
+                string diagnostics = "password diagnostics:\n";
+
+                diagnostics += LengthDiagnostics();
+
+                System.Console.WriteLine(diagnostics);
 
                 if (!authenticator.Numerals())
                 {
@@ -51,6 +52,16 @@
             {
                 authenticator.Push(input[i]);
             }
+        }
+
+        private string LengthDiagnostics()
+        {
+            if (!authenticator.Length())
+            {
+                return "length: failed\n";
+            }
+
+            return "length: success\n";
         }
     }
 }
