@@ -5,7 +5,15 @@ namespace Specification
     internal class SupportedValidTest
     {
         private PasswordAuthenticator.Facade unit;
-        private readonly string password = "1234567890!£$%^&*()-_=+[{]};:@#~,<.>/?qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBN";
+        private readonly string password;
+
+        public SupportedValidTest()
+        {
+            password += "1234567890";
+            password += "!£$%^&*()-_=+[{]};:@#~,<.>/?";
+            password += "qwertyuiopasdfghjklzxcvbnm";
+            password += "QWERTYUIOPASDFGHJKLZXCVBN";
+        }
 
         public string Test()
         {
