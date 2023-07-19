@@ -17,13 +17,9 @@
                 diagnostics += NumeralsDiagnostics();
                 diagnostics += SymbolsDiagnostics();
                 diagnostics += LowercaseDiagnostics();
+                diagnostics += UppercaseDiagnostics();
 
                 System.Console.WriteLine(diagnostics);
-
-                if (!authenticator.Uppercase())
-                {
-                    System.Console.WriteLine("uppercase: failed");
-                }
 
                 if (!authenticator.Supported())
                 {
@@ -80,6 +76,16 @@
             }
 
             return "lowercase: success\n";
+        }
+
+        private string UppercaseDiagnostics()
+        {
+            if (!authenticator.Uppercase())
+            {
+                return "uppercase: failed\n";
+            }
+
+            return "uppercase: success\n";
         }
     }
 }
