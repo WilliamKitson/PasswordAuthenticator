@@ -35,6 +35,7 @@
             output += new UppercaseInvalidTest().Test();
             output += new UppercaseValidTest().Test();
             output += new SupportedInvalidTest().Test();
+            output += new SupportedValidTest().Test();
 
             return output;
         }

@@ -43,6 +43,7 @@
     <Compile Include="src\LowercaseValidTest.cs" />
     <Compile Include="src\NumeralsInvalidTest.cs" />
     <Compile Include="src\NumeralsValidTest.cs" />
+    <Compile Include="src\SupportedValidTest.cs" />
     <Compile Include="src\SymbolsInvalidTest.cs" />
     <Compile Include="src\SymbolsValidTest.cs" />
     <Compile Include="src\SupportedInvalidTest.cs" />
