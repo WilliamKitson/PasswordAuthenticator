@@ -22,7 +22,7 @@
 
         private string GetDiagnostics()
         {
-            string output = "password diagnostics:\n";
+            string output = "\n";
 
             output += LengthDiagnostics();
             output += NumeralsDiagnostics();

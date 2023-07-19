@@ -11,7 +11,7 @@
                 return output;
             }
 
-            return "all tests pass";
+            return "all tests pass\n";
         }
 
         private string ConcatenateTests()
