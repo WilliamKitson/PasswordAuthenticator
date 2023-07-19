@@ -8,5 +8,6 @@
         public abstract bool Symbols();
         public abstract bool Lowercase();
         public abstract bool Uppercase();
+        public abstract bool Supported();
     }
 }

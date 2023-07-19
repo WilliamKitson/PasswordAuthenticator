@@ -76,6 +76,11 @@
             return false;
         }
 
+        public override bool Supported()
+        {
+            return false;
+        }
+
         private void InitialiseNumerals()
         {
             numerals.Push('1');
