@@ -29,7 +29,6 @@
             output += SymbolsDiagnostics();
             output += LowercaseDiagnostics();
             output += UppercaseDiagnostics();
-            output += SupportedDiagnostics();
 
             return output;
         }
@@ -82,16 +81,6 @@
             }
 
             return "uppercase:\tfailed\n";
-        }
-
-        private string SupportedDiagnostics()
-        {
-            if (authenticator.Supported())
-            {
-                return "supported:\tsuccess\n";
-            }
-
-            return "supported:\tfailed\n";
         }
     }
 }

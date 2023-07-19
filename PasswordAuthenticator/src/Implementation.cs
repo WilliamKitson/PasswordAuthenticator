@@ -7,7 +7,6 @@
         private readonly CharacterStack symbols;
         private readonly CharacterStack lowercase;
         private readonly CharacterStack uppercase;
-        private readonly CharacterStack supported;
 
         public Implementation()
         {
@@ -16,12 +15,10 @@
             symbols = new CharacterStack();
             lowercase = new CharacterStack();
             uppercase = new CharacterStack();
-            supported = new CharacterStack();
             InitialiseNumerals();
             InitialiseSymbols();
             InitialiseLowercase();
             InitialiseUppercase();
-            InitialiseSupported();
         }
 
         public override void Push(char input)
@@ -74,16 +71,6 @@
             for (int i = 0; i < uppercase.GetLength(); i++)
             {
                 if (password.Contains(uppercase.GetChar(i))) return true;
-            }
-
-            return false;
-        }
-
-        public override bool Supported()
-        {
-            for (int i = 0; i < supported.GetLength(); i++)
-            {
-                if (password.Contains(supported.GetChar(i))) return true;
             }
 
             return false;
@@ -193,100 +180,6 @@
             uppercase.Push('B');
             uppercase.Push('N');
             uppercase.Push('M');
-        }
-
-        private void InitialiseSupported()
-        {
-            supported.Push('1');
-            supported.Push('2');
-            supported.Push('3');
-            supported.Push('4');
-            supported.Push('5');
-            supported.Push('6');
-            supported.Push('7');
-            supported.Push('8');
-            supported.Push('9');
-            supported.Push('0');
-            supported.Push('!');
-            supported.Push('£');
-            supported.Push('$');
-            supported.Push('%');
-            supported.Push('^');
-            supported.Push('&');
-            supported.Push('*');
-            supported.Push('(');
-            supported.Push(')');
-            supported.Push('-');
-            supported.Push('_');
-            supported.Push('=');
-            supported.Push('+');
-            supported.Push('[');
-            supported.Push('{');
-            supported.Push(']');
-            supported.Push('}');
-            supported.Push(';');
-            supported.Push(':');
-            supported.Push('@');
-            supported.Push('#');
-            supported.Push('~');
-            supported.Push(',');
-            supported.Push('<');
-            supported.Push('.');
-            supported.Push('>');
-            supported.Push('/');
-            supported.Push('?');
-            supported.Push('q');
-            supported.Push('w');
-            supported.Push('e');
-            supported.Push('r');
-            supported.Push('t');
-            supported.Push('y');
-            supported.Push('u');
-            supported.Push('i');
-            supported.Push('o');
-            supported.Push('p');
-            supported.Push('a');
-            supported.Push('s');
-            supported.Push('d');
-            supported.Push('f');
-            supported.Push('g');
-            supported.Push('h');
-            supported.Push('j');
-            supported.Push('k');
-            supported.Push('l');
-            supported.Push('z');
-            supported.Push('x');
-            supported.Push('c');
-            supported.Push('v');
-            supported.Push('b');
-            supported.Push('n');
-            supported.Push('m');
-            supported.Push('Q');
-            supported.Push('W');
-            supported.Push('E');
-            supported.Push('R');
-            supported.Push('T');
-            supported.Push('Y');
-            supported.Push('U');
-            supported.Push('I');
-            supported.Push('O');
-            supported.Push('P');
-            supported.Push('A');
-            supported.Push('S');
-            supported.Push('D');
-            supported.Push('F');
-            supported.Push('G');
-            supported.Push('H');
-            supported.Push('J');
-            supported.Push('K');
-            supported.Push('L');
-            supported.Push('Z');
-            supported.Push('X');
-            supported.Push('C');
-            supported.Push('V');
-            supported.Push('B');
-            supported.Push('N');
-            supported.Push('M');
         }
     }
 }
