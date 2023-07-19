@@ -14,6 +14,11 @@
             return "all tests pass!\n";
         }
 
+        public bool GetSuccess()
+        {
+            return Test() == "all tests pass!\n";
+        }
+
         private string ConcatenateTests()
         {
             string output = "";
