@@ -38,10 +38,10 @@
         {
             if (!authenticator.Length())
             {
-                return "length:\tfailed\n";
+                return "length:\t\tfailed\n";
             }
 
-            return "length:\tsuccess\n";
+            return "length:\t\tsuccess\n";
         }
 
         private string NumeralsDiagnostics()
