@@ -16,13 +16,9 @@
                 diagnostics += LengthDiagnostics();
                 diagnostics += NumeralsDiagnostics();
                 diagnostics += SymbolsDiagnostics();
+                diagnostics += LowercaseDiagnostics();
 
                 System.Console.WriteLine(diagnostics);
-
-                if (!authenticator.Lowercase())
-                {
-                    System.Console.WriteLine("lowercase: failed");
-                }
 
                 if (!authenticator.Uppercase())
                 {
@@ -74,6 +70,16 @@
             }
 
             return "symbols: success\n";
+        }
+
+        private string LowercaseDiagnostics()
+        {
+            if (!authenticator.Lowercase())
+            {
+                return "lowercase: failed\n";
+            }
+
+            return "lowercase: success\n";
         }
     }
 }
