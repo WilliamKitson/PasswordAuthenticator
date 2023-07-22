@@ -2,7 +2,12 @@
 {
     internal class TestSuite
     {
-        bool success = false;
+        bool success;
+
+        public TestSuite()
+        {
+            success = false;
+        }
 
         public string Test()
         {
