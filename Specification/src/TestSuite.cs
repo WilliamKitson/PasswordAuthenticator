@@ -6,7 +6,7 @@
         {
             string output = ConcatenateTests();
 
-            if (System.Convert.ToBoolean(output.Length))
+            if (output.Length > 0)
             {
                 return output;
             }
