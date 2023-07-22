@@ -2,6 +2,8 @@
 {
     internal class TestSuite
     {
+        bool success = false;
+
         public string Test()
         {
             string output = ConcatenateTests();
@@ -11,12 +13,13 @@
                 return output;
             }
 
-            return SuccessMessage();
+            success = true;
+            return "all tests pass!\n";
         }
 
         public bool GetSuccess()
         {
-            return Test() == SuccessMessage();
+            return success;
         }
 
         private string ConcatenateTests()
@@ -35,11 +38,6 @@
             output += new UppercaseValidTest().Test();
 
             return output;
-        }
-
-        private string SuccessMessage()
-        {
-            return "all tests pass!\n";
         }
     }
 }
