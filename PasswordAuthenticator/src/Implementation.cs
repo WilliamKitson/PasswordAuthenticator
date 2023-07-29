@@ -26,9 +26,9 @@
             password.Push(input);
         }
 
-        public override bool Length()
+        public override bool Length(string input)
         {
-            if (password.GetLength() < 20)
+            if (input.Length < 20)
             {
                 return false;
             }

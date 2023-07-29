@@ -2,32 +2,16 @@
 {
     internal class LengthInvalidTest
     {
-        private readonly PasswordAuthenticator.Facade unit;
-
-        public LengthInvalidTest()
-        {
-            unit = new PasswordAuthenticator.Implementation();
-            InitialiseInvalidPassword();
-        }
-
         public string Test()
         {
-            if (!unit.Length())
+            PasswordAuthenticator.Facade unit = new PasswordAuthenticator.Implementation();
+
+            if (!unit.Length("thispasswordistoosh"))
             {
                 return "";
             }
 
             return "length invalid test failed\n";
-        }
-
-        private void InitialiseInvalidPassword()
-        {
-            string password = "thispasswordistoosh";
-
-            for (int i = 0; i < password.Length; i++)
-            {
-                unit.Push(password[i]);
-            }
         }
     }
 }

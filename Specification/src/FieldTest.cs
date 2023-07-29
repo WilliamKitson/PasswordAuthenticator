@@ -7,7 +7,7 @@
         public string Test(string input)
         {
             InitialisePassword(input);
-            return GetDiagnostics();
+            return GetDiagnostics(input);
         }
 
         private void InitialisePassword(string input)
@@ -20,11 +20,11 @@
             }
         }
 
-        private string GetDiagnostics()
+        private string GetDiagnostics(string input)
         {
             string output = "\n";
 
-            output += LengthDiagnostics();
+            output += LengthDiagnostics(input);
             output += NumeralsDiagnostics();
             output += SymbolsDiagnostics();
             output += LowercaseDiagnostics();
@@ -33,9 +33,9 @@
             return output;
         }
 
-        private string LengthDiagnostics()
+        private string LengthDiagnostics(string input)
         {
-            if (!authenticator.Length())
+            if (!authenticator.Length(input))
             {
                 return "length:\t\tfailed\n";
             }
