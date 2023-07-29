@@ -2,13 +2,6 @@
 {
     public class Implementation : Facade
     {
-        private readonly string uppercase;
-
-        public Implementation()
-        {
-            uppercase = "QWERTYUIOPASDFGHJKLZXCVBNM";
-        }
-
         public override bool Length(string input)
         {
             if (input.Length < 20)
@@ -36,18 +29,7 @@
 
         public override bool Uppercase(string input)
         {
-            for (int i = 0; i < input.Length; i++)
-            {
-                for (int i2 = 0; i2 < uppercase.Length; i2++)
-                {
-                    if (input[i] == uppercase[i2])
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
+            return ContainsCharacters(input, "QWERTYUIOPASDFGHJKLZXCVBNM");
         }
 
         private bool ContainsCharacters(string password, string comparison)
