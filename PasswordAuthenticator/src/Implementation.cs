@@ -2,7 +2,6 @@
 {
     public class Implementation : Facade
     {
-        private readonly CharacterStack password;
         private readonly string numerals;
         private readonly string symbols;
         private readonly string lowercase;
@@ -10,7 +9,6 @@
 
         public Implementation()
         {
-            password = new CharacterStack();
             numerals = "1234567890";
             symbols = "!£$%^&*()-_=+[{]};:@#~,<.>/?";
             lowercase = "qwertyuiopasdfghjklzxcvbnm";
@@ -19,7 +17,6 @@
 
         public override void Push(char input)
         {
-            password.Push(input);
         }
 
         public override bool Length(string input)
