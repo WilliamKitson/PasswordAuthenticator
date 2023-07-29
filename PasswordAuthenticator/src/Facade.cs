@@ -5,7 +5,7 @@
         public abstract void Push(char input);
         public abstract bool Length(string input);
         public abstract bool Numerals(string input);
-        public abstract bool Symbols();
+        public abstract bool Symbols(string input);
         public abstract bool Lowercase();
         public abstract bool Uppercase();
     }

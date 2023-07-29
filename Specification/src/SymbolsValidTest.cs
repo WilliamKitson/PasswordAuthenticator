@@ -2,7 +2,6 @@
 {
     internal class SymbolsValidTest
     {
-        private PasswordAuthenticator.Facade unit;
         private readonly string prefix = "thisisapasswordprefixthisis";
         private readonly string symbols = "!£$%^&*()-_=+[{]};:@#~,<.>/?";
 
@@ -18,26 +17,30 @@
 
         private int CountSuccesses()
         {
+            PasswordAuthenticator.Facade unit = new PasswordAuthenticator.Implementation();
             int output = 0;
 
             for (int i = 0; i < symbols.Length; i++)
             {
-                InitialisePrefix(i);
-                unit.Push(symbols[i]);
-                output += System.Convert.ToInt32(unit.Symbols());
+                string password = InitialisePrefix(i);
+                password += symbols[i];
+
+                output += System.Convert.ToInt32(unit.Symbols(password));
             }
 
             return output;
         }
 
-        private void InitialisePrefix(int input)
+        private string InitialisePrefix(int input)
         {
-            unit = new PasswordAuthenticator.Implementation();
+            string output = "";
 
             for (int i = 0; i < input; i++)
             {
-                unit.Push(prefix[i]);
+                output += prefix[i];
             }
+
+            return output;
         }
     }
 }

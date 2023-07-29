@@ -4,7 +4,7 @@
     {
         private readonly CharacterStack password;
         private readonly string numerals;
-        private readonly CharacterStack symbols;
+        private readonly string symbols;
         private readonly CharacterStack lowercase;
         private readonly CharacterStack uppercase;
 
@@ -12,10 +12,9 @@
         {
             password = new CharacterStack();
             numerals = "1234567890";
-            symbols = new CharacterStack();
+            symbols = "!£$%^&*()-_=+[{]};:@#~,<.>/?";
             lowercase = new CharacterStack();
             uppercase = new CharacterStack();
-            InitialiseSymbols();
             InitialiseLowercase();
             InitialiseUppercase();
         }
@@ -51,11 +50,17 @@
             return false;
         }
 
-        public override bool Symbols()
+        public override bool Symbols(string input)
         {
-            for (int i = 0; i < symbols.GetLength(); i++)
+            for (int i = 0; i < input.Length; i++)
             {
-                if (password.Contains(symbols.GetChar(i))) return true;
+                for (int i2 = 0; i2 < symbols.Length; i2++)
+                {
+                    if (input[i] == symbols[i2])
+                    {
+                        return true;
+                    }
+                }
             }
 
             return false;
@@ -79,38 +84,6 @@
             }
 
             return false;
-        }
-
-        private void InitialiseSymbols()
-        {
-            symbols.Push('!');
-            symbols.Push('£');
-            symbols.Push('$');
-            symbols.Push('%');
-            symbols.Push('^');
-            symbols.Push('&');
-            symbols.Push('*');
-            symbols.Push('(');
-            symbols.Push(')');
-            symbols.Push('-');
-            symbols.Push('_');
-            symbols.Push('=');
-            symbols.Push('+');
-            symbols.Push('[');
-            symbols.Push('{');
-            symbols.Push(']');
-            symbols.Push('}');
-            symbols.Push(';');
-            symbols.Push(':');
-            symbols.Push('@');
-            symbols.Push('#');
-            symbols.Push('~');
-            symbols.Push(',');
-            symbols.Push('<');
-            symbols.Push('.');
-            symbols.Push('>');
-            symbols.Push('/');
-            symbols.Push('?');
         }
 
         private void InitialiseLowercase()

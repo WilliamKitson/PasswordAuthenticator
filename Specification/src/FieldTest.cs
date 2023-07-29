@@ -26,7 +26,7 @@
 
             output += LengthDiagnostics(input);
             output += NumeralsDiagnostics(input);
-            output += SymbolsDiagnostics();
+            output += SymbolsDiagnostics(input);
             output += LowercaseDiagnostics();
             output += UppercaseDiagnostics();
 
@@ -53,9 +53,9 @@
             return "numerals:\tfailed\n";
         }
 
-        private string SymbolsDiagnostics()
+        private string SymbolsDiagnostics(string input)
         {
-            if (authenticator.Symbols())
+            if (authenticator.Symbols(input))
             {
                 return "symbols:\tsuccess\n";
             }
