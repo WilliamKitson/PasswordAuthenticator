@@ -36,13 +36,17 @@
         {
             for (int i = 0; i < password.Length; i++)
             {
-                for (int i2 = 0; i2 < comparison.Length; i2++)
-                {
-                    if (password[i] == comparison[i2])
-                    {
-                        return true;
-                    }
-                }
+                if (CharacterMatches(password[i], comparison)) return true;
+            }
+
+            return false;
+        }
+
+        private bool CharacterMatches(char character, string comparison)
+        {
+            for (int i = 0; i < comparison.Length; i++)
+            {
+                if (character == comparison[i]) return true;
             }
 
             return false;
