@@ -2,12 +2,10 @@
 {
     public class Implementation : Facade
     {
-        private readonly string lowercase;
         private readonly string uppercase;
 
         public Implementation()
         {
-            lowercase = "qwertyuiopasdfghjklzxcvbnm";
             uppercase = "QWERTYUIOPASDFGHJKLZXCVBNM";
         }
 
@@ -33,18 +31,7 @@
 
         public override bool Lowercase(string input)
         {
-            for (int i = 0; i < input.Length; i++)
-            {
-                for (int i2 = 0; i2 < lowercase.Length; i2++)
-                {
-                    if (input[i] == lowercase[i2])
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
+            return ContainsCharacters(input, "qwertyuiopasdfghjklzxcvbnm");
         }
 
         public override bool Uppercase(string input)
