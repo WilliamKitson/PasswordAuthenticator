@@ -2,13 +2,11 @@
 {
     public class Implementation : Facade
     {
-        private readonly string symbols;
         private readonly string lowercase;
         private readonly string uppercase;
 
         public Implementation()
         {
-            symbols = "!£$%^&*()-_=+[{]};:@#~,<.>/?";
             lowercase = "qwertyuiopasdfghjklzxcvbnm";
             uppercase = "QWERTYUIOPASDFGHJKLZXCVBNM";
         }
@@ -30,18 +28,7 @@
 
         public override bool Symbols(string input)
         {
-            for (int i = 0; i < input.Length; i++)
-            {
-                for (int i2 = 0; i2 < symbols.Length; i2++)
-                {
-                    if (input[i] == symbols[i2])
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
+            return ContainsCharacters(input, "!£$%^&*()-_=+[{]};:@#~,<.>/?");
         }
 
         public override bool Lowercase(string input)
