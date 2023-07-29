@@ -3,7 +3,7 @@
     public class Implementation : Facade
     {
         private readonly CharacterStack password;
-        private readonly CharacterStack numerals;
+        private readonly string numerals;
         private readonly CharacterStack symbols;
         private readonly CharacterStack lowercase;
         private readonly CharacterStack uppercase;
@@ -11,11 +11,10 @@
         public Implementation()
         {
             password = new CharacterStack();
-            numerals = new CharacterStack();
+            numerals = "1234567890";
             symbols = new CharacterStack();
             lowercase = new CharacterStack();
             uppercase = new CharacterStack();
-            InitialiseNumerals();
             InitialiseSymbols();
             InitialiseLowercase();
             InitialiseUppercase();
@@ -36,11 +35,17 @@
             return true;
         }
 
-        public override bool Numerals()
+        public override bool Numerals(string input)
         {
-            for (int i = 0; i < numerals.GetLength(); i++)
+            for (int i = 0; i < input.Length; i++)
             {
-                if (password.Contains(numerals.GetChar(i))) return true;
+                for (int i2 = 0; i2 < numerals.Length; i2++)
+                {
+                    if (input[i] == numerals[i2])
+                    {
+                        return true;
+                    }
+                }
             }
 
             return false;
@@ -74,20 +79,6 @@
             }
 
             return false;
-        }
-
-        private void InitialiseNumerals()
-        {
-            numerals.Push('1');
-            numerals.Push('2');
-            numerals.Push('3');
-            numerals.Push('4');
-            numerals.Push('5');
-            numerals.Push('6');
-            numerals.Push('7');
-            numerals.Push('8');
-            numerals.Push('9');
-            numerals.Push('0');
         }
 
         private void InitialiseSymbols()

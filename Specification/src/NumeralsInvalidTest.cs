@@ -2,32 +2,16 @@
 {
     internal class NumeralsInvalidTest
     {
-        private readonly PasswordAuthenticator.Facade unit;
-
-        public NumeralsInvalidTest()
-        {
-            unit = new PasswordAuthenticator.Implementation();
-            InitialiseInvalidPassword();
-        }
-
         public string Test()
         {
-            if (!unit.Numerals())
+            PasswordAuthenticator.Facade unit = new PasswordAuthenticator.Implementation();
+
+            if (!unit.Numerals("nonumeralshere"))
             {
                 return "";
             }
 
             return "numerals invalid test failed\n";
-        }
-
-        private void InitialiseInvalidPassword()
-        {
-            string password = "nonumeralshere";
-
-            for (int i = 0; i < password.Length; i++)
-            {
-                unit.Push(password[i]);
-            }
         }
     }
 }

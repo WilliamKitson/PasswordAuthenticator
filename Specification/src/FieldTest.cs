@@ -25,7 +25,7 @@
             string output = "\n";
 
             output += LengthDiagnostics(input);
-            output += NumeralsDiagnostics();
+            output += NumeralsDiagnostics(input);
             output += SymbolsDiagnostics();
             output += LowercaseDiagnostics();
             output += UppercaseDiagnostics();
@@ -43,9 +43,9 @@
             return "length:\t\tsuccess\n";
         }
 
-        private string NumeralsDiagnostics()
+        private string NumeralsDiagnostics(string input)
         {
-            if (authenticator.Numerals())
+            if (authenticator.Numerals(input))
             {
                 return "numerals:\tsuccess\n";
             }
