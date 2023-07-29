@@ -6,7 +6,7 @@
         private readonly string numerals;
         private readonly string symbols;
         private readonly string lowercase;
-        private readonly CharacterStack uppercase;
+        private readonly string uppercase;
 
         public Implementation()
         {
@@ -14,8 +14,7 @@
             numerals = "1234567890";
             symbols = "!£$%^&*()-_=+[{]};:@#~,<.>/?";
             lowercase = "qwertyuiopasdfghjklzxcvbnm";
-            uppercase = new CharacterStack();
-            InitialiseUppercase();
+            uppercase = "QWERTYUIOPASDFGHJKLZXCVBNM";
         }
 
         public override void Push(char input)
@@ -81,44 +80,20 @@
             return false;
         }
 
-        public override bool Uppercase()
+        public override bool Uppercase(string input)
         {
-            for (int i = 0; i < uppercase.GetLength(); i++)
+            for (int i = 0; i < input.Length; i++)
             {
-                if (password.Contains(uppercase.GetChar(i))) return true;
+                for (int i2 = 0; i2 < uppercase.Length; i2++)
+                {
+                    if (input[i] == uppercase[i2])
+                    {
+                        return true;
+                    }
+                }
             }
 
             return false;
-        }
-
-        private void InitialiseUppercase()
-        {
-            uppercase.Push('Q');
-            uppercase.Push('W');
-            uppercase.Push('E');
-            uppercase.Push('R');
-            uppercase.Push('T');
-            uppercase.Push('Y');
-            uppercase.Push('U');
-            uppercase.Push('I');
-            uppercase.Push('O');
-            uppercase.Push('P');
-            uppercase.Push('A');
-            uppercase.Push('S');
-            uppercase.Push('D');
-            uppercase.Push('F');
-            uppercase.Push('G');
-            uppercase.Push('H');
-            uppercase.Push('J');
-            uppercase.Push('K');
-            uppercase.Push('L');
-            uppercase.Push('Z');
-            uppercase.Push('X');
-            uppercase.Push('C');
-            uppercase.Push('V');
-            uppercase.Push('B');
-            uppercase.Push('N');
-            uppercase.Push('M');
         }
     }
 }

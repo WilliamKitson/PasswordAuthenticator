@@ -7,6 +7,6 @@
         public abstract bool Numerals(string input);
         public abstract bool Symbols(string input);
         public abstract bool Lowercase(string input);
-        public abstract bool Uppercase();
+        public abstract bool Uppercase(string input);
     }
 }

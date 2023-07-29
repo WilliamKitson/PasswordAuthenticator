@@ -28,7 +28,7 @@
             output += NumeralsDiagnostics(input);
             output += SymbolsDiagnostics(input);
             output += LowercaseDiagnostics(input);
-            output += UppercaseDiagnostics();
+            output += UppercaseDiagnostics(input);
 
             return output;
         }
@@ -73,9 +73,9 @@
             return "lowercase:\tfailed\n";
         }
 
-        private string UppercaseDiagnostics()
+        private string UppercaseDiagnostics(string input)
         {
-            if (authenticator.Uppercase())
+            if (authenticator.Uppercase(input))
             {
                 return "uppercase:\tsuccess\n";
             }
