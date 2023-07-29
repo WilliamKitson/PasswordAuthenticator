@@ -2,14 +2,12 @@
 {
     public class Implementation : Facade
     {
-        private readonly string numerals;
         private readonly string symbols;
         private readonly string lowercase;
         private readonly string uppercase;
 
         public Implementation()
         {
-            numerals = "1234567890";
             symbols = "!£$%^&*()-_=+[{]};:@#~,<.>/?";
             lowercase = "qwertyuiopasdfghjklzxcvbnm";
             uppercase = "QWERTYUIOPASDFGHJKLZXCVBNM";
@@ -27,18 +25,7 @@
 
         public override bool Numerals(string input)
         {
-            for (int i = 0; i < input.Length; i++)
-            {
-                for (int i2 = 0; i2 < numerals.Length; i2++)
-                {
-                    if (input[i] == numerals[i2])
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
+            return ContainsCharacters(input, "1234567890");
         }
 
         public override bool Symbols(string input)
@@ -80,6 +67,22 @@
                 for (int i2 = 0; i2 < uppercase.Length; i2++)
                 {
                     if (input[i] == uppercase[i2])
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        private bool ContainsCharacters(string password, string comparison)
+        {
+            for (int i = 0; i < password.Length; i++)
+            {
+                for (int i2 = 0; i2 < comparison.Length; i2++)
+                {
+                    if (password[i] == comparison[i2])
                     {
                         return true;
                     }
