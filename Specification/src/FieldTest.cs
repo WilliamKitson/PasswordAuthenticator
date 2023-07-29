@@ -27,7 +27,7 @@
             output += LengthDiagnostics(input);
             output += NumeralsDiagnostics(input);
             output += SymbolsDiagnostics(input);
-            output += LowercaseDiagnostics();
+            output += LowercaseDiagnostics(input);
             output += UppercaseDiagnostics();
 
             return output;
@@ -63,9 +63,9 @@
             return "symbols:\tfailed\n";
         }
 
-        private string LowercaseDiagnostics()
+        private string LowercaseDiagnostics(string input)
         {
-            if (authenticator.Lowercase())
+            if (authenticator.Lowercase(input))
             {
                 return "lowercase:\tsuccess\n";
             }

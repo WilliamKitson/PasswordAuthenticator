@@ -5,7 +5,7 @@
         private readonly CharacterStack password;
         private readonly string numerals;
         private readonly string symbols;
-        private readonly CharacterStack lowercase;
+        private readonly string lowercase;
         private readonly CharacterStack uppercase;
 
         public Implementation()
@@ -13,9 +13,8 @@
             password = new CharacterStack();
             numerals = "1234567890";
             symbols = "!£$%^&*()-_=+[{]};:@#~,<.>/?";
-            lowercase = new CharacterStack();
+            lowercase = "qwertyuiopasdfghjklzxcvbnm";
             uppercase = new CharacterStack();
-            InitialiseLowercase();
             InitialiseUppercase();
         }
 
@@ -66,11 +65,17 @@
             return false;
         }
 
-        public override bool Lowercase()
+        public override bool Lowercase(string input)
         {
-            for (int i = 0; i < lowercase.GetLength(); i++)
+            for (int i = 0; i < input.Length; i++)
             {
-                if (password.Contains(lowercase.GetChar(i))) return true;
+                for (int i2 = 0; i2 < lowercase.Length; i2++)
+                {
+                    if (input[i] == lowercase[i2])
+                    {
+                        return true;
+                    }
+                }
             }
 
             return false;
@@ -84,36 +89,6 @@
             }
 
             return false;
-        }
-
-        private void InitialiseLowercase()
-        {
-            lowercase.Push('q');
-            lowercase.Push('w');
-            lowercase.Push('e');
-            lowercase.Push('r');
-            lowercase.Push('t');
-            lowercase.Push('y');
-            lowercase.Push('u');
-            lowercase.Push('i');
-            lowercase.Push('o');
-            lowercase.Push('p');
-            lowercase.Push('a');
-            lowercase.Push('s');
-            lowercase.Push('d');
-            lowercase.Push('f');
-            lowercase.Push('g');
-            lowercase.Push('h');
-            lowercase.Push('j');
-            lowercase.Push('k');
-            lowercase.Push('l');
-            lowercase.Push('z');
-            lowercase.Push('x');
-            lowercase.Push('c');
-            lowercase.Push('v');
-            lowercase.Push('b');
-            lowercase.Push('n');
-            lowercase.Push('m');
         }
 
         private void InitialiseUppercase()
