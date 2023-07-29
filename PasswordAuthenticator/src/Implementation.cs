@@ -15,10 +15,6 @@
             uppercase = "QWERTYUIOPASDFGHJKLZXCVBNM";
         }
 
-        public override void Push(char input)
-        {
-        }
-
         public override bool Length(string input)
         {
             if (input.Length < 20)

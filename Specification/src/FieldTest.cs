@@ -2,25 +2,7 @@
 {
     internal class FieldTest
     {
-        PasswordAuthenticator.Facade authenticator;
-
         public string Test(string input)
-        {
-            InitialisePassword(input);
-            return GetDiagnostics(input);
-        }
-
-        private void InitialisePassword(string input)
-        {
-            authenticator = new PasswordAuthenticator.Implementation();
-
-            for (int i = 0; i < input.Length; i++)
-            {
-                authenticator.Push(input[i]);
-            }
-        }
-
-        private string GetDiagnostics(string input)
         {
             string output = "\n";
 
@@ -35,7 +17,9 @@
 
         private string LengthDiagnostics(string input)
         {
-            if (!authenticator.Length(input))
+            PasswordAuthenticator.Facade unit = new PasswordAuthenticator.Implementation();
+
+            if (!unit.Length(input))
             {
                 return "length:\t\tfailed\n";
             }
@@ -45,7 +29,9 @@
 
         private string NumeralsDiagnostics(string input)
         {
-            if (authenticator.Numerals(input))
+            PasswordAuthenticator.Facade unit = new PasswordAuthenticator.Implementation();
+
+            if (unit.Numerals(input))
             {
                 return "numerals:\tsuccess\n";
             }
@@ -55,7 +41,9 @@
 
         private string SymbolsDiagnostics(string input)
         {
-            if (authenticator.Symbols(input))
+            PasswordAuthenticator.Facade unit = new PasswordAuthenticator.Implementation();
+
+            if (unit.Symbols(input))
             {
                 return "symbols:\tsuccess\n";
             }
@@ -65,7 +53,9 @@
 
         private string LowercaseDiagnostics(string input)
         {
-            if (authenticator.Lowercase(input))
+            PasswordAuthenticator.Facade unit = new PasswordAuthenticator.Implementation();
+
+            if (unit.Lowercase(input))
             {
                 return "lowercase:\tsuccess\n";
             }
@@ -75,7 +65,9 @@
 
         private string UppercaseDiagnostics(string input)
         {
-            if (authenticator.Uppercase(input))
+            PasswordAuthenticator.Facade unit = new PasswordAuthenticator.Implementation();
+
+            if (unit.Uppercase(input))
             {
                 return "uppercase:\tsuccess\n";
             }
