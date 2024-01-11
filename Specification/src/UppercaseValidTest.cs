@@ -2,7 +2,6 @@
 {
     internal class UppercaseValidTest
     {
-        private PasswordAuthenticator.Facade unit;
         private readonly string prefix = "qwertyuiopasdfghjklzxcvbnm";
         private readonly string uppercase = "QWERTYUIOPASDFGHJKLZXCVBN";
 
